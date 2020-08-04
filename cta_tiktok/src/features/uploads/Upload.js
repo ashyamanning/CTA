@@ -14,7 +14,7 @@ const Upload = () => {
 
     const handleChange = (e) => {
         const video = e.target.files[0];
-        const types = ["video/mp4", "video/mov"];
+        const types = ["video/mp4", "video/mov", "video/ogg", "video/quicktime"];
         // debugger;
         if (types.every((type) => video.type !== type)) {
             alert(`${video.type} is not supported format`);
