@@ -10,7 +10,10 @@ const Upload = () => {
     const [progress, setProgress] = useState(0);
     
     const bucketName = "videos";
-    const filePath = storage.ref(`${bucketName}/${video.name}`).put(video);
+    let filePath; 
+    if (video !== null) {
+        filePath = storage.ref(`${bucketName}/${video.name}`).put(video);
+    }
 
     const handleChange = (e) => {
         const video = e.target.files[0];
