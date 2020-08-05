@@ -8,7 +8,7 @@ export const AuthRoute = ({ children, ...rest }) => {
         <Route 
             {...rest}
             render={({ location }) => {
-                return !currentUser ? children : <Redirect to="/" />
+                return !currentUser ? children : <Redirect from={location} to="/" />
             }}
         />
     )
@@ -20,7 +20,7 @@ export const ProtectedRoute = ({ children, ...rest }) => {
         <Route 
             {...rest}
             render={({ location }) => {
-                return currentUser ? children : <Redirect to="/login" />
+                return currentUser ? children : <Redirect from={location} to="/login" />
             }}
         />
     )
