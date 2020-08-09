@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from "./features/navbar/NavBar";
 import LandingPage from "./features/home/LandingPage";
-import Signup from "./features/signup/Signup";
+import SignUp from "./features/signup/Signup";
 import Login from "./features/login/Login";
 import Upload from "./features/uploads/Upload";
 import { Route } from "react-router-dom";
@@ -16,7 +16,7 @@ function App() {
         <Upload />
       </Route>
       <Route path="/signup">
-        <Signup />
+        <SignUp />
       </Route>
       <Route path="/login">
         <Login />

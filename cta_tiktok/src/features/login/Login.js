@@ -10,6 +10,7 @@ const Login = () => {
             <div>
                 <p>Manage your account, check notifications, comment on videos, and more.</p>
             </div>
+            
             <div>
                 {/* <button type="submit" onClick={}>Use phone / email / username</button>
                 <button type="submit" onClick={}>Log in with Facebook</button>

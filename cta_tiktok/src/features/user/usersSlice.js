@@ -9,17 +9,17 @@ export const usersSlice = createSlice({
         getUsers: (state, action) => {
             return state.users = action.payload;
         },
-        getUser: (state, action) => {
+        receiveUser: (state, action) => {
             state.users.forEach((user) => {
                 return user.id = action.payload;
             })
         },
         addUser: {
             reducer: (state, action) => { state.unshift(action.payload) },
-            prepare: (user) => ({ payload: {id: id++,  }})
+            prepare: (user) => ({ payload: { id: user.id } })
         }
     }
 });
 
-export const { getUsers, getUser, addUser } = usersSlice.actions;
+export const { getUsers, receiveUser, addUser } = usersSlice.actions;
 export default usersSlice.reducer;

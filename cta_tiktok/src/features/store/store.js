@@ -1,12 +1,19 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
+import usersReducer from "../user/usersSlice";
+import tokenReducer from "../../token/tokenSlice";
+import authReducer from "../../token/authSlice";
+
 
 const reducer = combineReducers({
     //reducers wil go here!
+    users: usersReducer,
+    token: tokenReducer,
+    // auth: authReducer
 });
 
-const store = configureStore({
+export default configureStore({
     reducer,
+    middleware: [...getDefaultMiddleware()]
 });
 
-export default store;

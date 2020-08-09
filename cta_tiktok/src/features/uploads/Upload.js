@@ -68,16 +68,26 @@ const Upload = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <progress value={progress} max="100"/>
-            <br />
-            <label>
-                Upload file:
-                <input type="file" ref={filePath} onChange={handleChange}/>
-            </label>
-            <br />
-            <button type="button" onClick={handleUpload}>Upload</button>
-        </form>
+        <>
+            <form onSubmit={handleSubmit}>
+                <progress value={progress} max="100"/>
+                <br />
+                <label>
+                    Upload file:
+                    <input type="file" ref={filePath} onChange={handleChange}/>
+                </label>
+                <br />
+                <button type="button" onClick={handleUpload}>Upload</button>
+            </form>
+            {!video ? 
+                null : 
+                <video width="450" height="640" controls="on" autoPlay="om" src={video} type={video.type}/>
+                /* <video width="320" height="740" controls>
+                    <source src={videoURL} type={video.type}/>
+                </video> */
+            }
+            
+        </>
     )
 };
 

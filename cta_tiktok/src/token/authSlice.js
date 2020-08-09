@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { receiveToken } from "../token/tokenSlice";
 import { getFirebaseIdToken } from "../util/firebaseFunctions";
+import { receiveUser } from "../features/user/usersSlice";
 import { apiURL } from "../util/apiURL";
 
 export const authSlice = createSlice({  
@@ -32,5 +33,5 @@ export const updateUser = (user) => async (dispatch) => {
     }
 };
 
-export const { authLogin, authLogout } = userSlice.actions;
-export default userSlice.reducer;
+export const { authLogin, authLogout } = authSlice.actions;
+export default authSlice.reducer;
