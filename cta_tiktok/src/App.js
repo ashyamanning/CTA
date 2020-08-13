@@ -13,6 +13,14 @@ function App() {
       <NavBar />
       <Route exact to="/">
         <LandingPage />
+      </Route>
+      <Route path="/trending">
+
+      </Route>
+      <Route path="/following">
+
+      </Route>
+      <Route path="/upload">
         <Upload />
       </Route>
       <Route path="/signup">

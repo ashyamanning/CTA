@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import { receiveToken } from "../token/tokenSlice";
 import { getFirebaseIdToken } from "../util/firebaseFunctions";
 import { receiveUser } from "../features/user/usersSlice";
-import { apiURL } from "../util/apiURL";
 
 export const authSlice = createSlice({  
     name: "auth",  
@@ -29,7 +28,7 @@ export const updateUser = (user) => async (dispatch) => {
             dispatch(receiveUser(null))
         }
     } catch (err) {
-        console.log(error)
+        console.log(err);
     }
 };
 

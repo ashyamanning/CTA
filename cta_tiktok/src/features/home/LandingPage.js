@@ -2,7 +2,13 @@ import React from "react";
 
 const LandingPage = () => {
     return (
-        <div>This is the landing page!</div>
+        <>
+            <div>
+                <h1>Make Your Day</h1>
+                <h3>Real People. Real Videos.</h3>
+            </div>
+            <div>This is the featured videos replays!</div>
+        </>
     )
 };
 
