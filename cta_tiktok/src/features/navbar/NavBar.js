@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { AuthContext } from "../../providers/AuthContext";
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
-    const { currentUser } = useContext(AuthContext);
+    // const { currentUser } = useContext(AuthContext);
+    const currentUser = null;
+    const userToken = useSelector((state) => state);
+    console.log(userToken);
 
     const homeNav = () => {
         return (
@@ -15,7 +18,7 @@ const NavBar = () => {
     };
 
     const watchNowNav = () => {
-        if (currentUser) {
+        if (userToken) {
             return (
                 <nav>
                 <NavLink to="/trending">
@@ -40,7 +43,7 @@ const NavBar = () => {
 
     return (
         <>
-            {!currentUser ? homeNav : watchNowNav}
+            {userToken ? homeNav() : watchNowNav()}
         </>
     );
 };

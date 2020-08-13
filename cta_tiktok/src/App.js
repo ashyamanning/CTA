@@ -4,18 +4,19 @@ import LandingPage from "./features/home/LandingPage";
 import SignUp from "./features/signup/Signup";
 import Login from "./features/login/Login";
 import Upload from "./features/uploads/Upload";
+import TrendingFeed from "./features/trending/TrendingFeed";
 import { Route } from "react-router-dom";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <Route exact to="/">
+      <Route exact path="/">
+        <NavBar />
         <LandingPage />
       </Route>
       <Route path="/trending">
-
+        <TrendingFeed />
       </Route>
       <Route path="/following">
 
