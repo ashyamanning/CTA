@@ -1,6 +1,6 @@
 import React from "react";
 import { logout } from "../../util/firebaseFunctions";
-import { useHistory } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 const Logout = () => {
 const history = useHistory();
