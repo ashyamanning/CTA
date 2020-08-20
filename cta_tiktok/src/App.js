@@ -7,6 +7,7 @@ import Logout from "./features/logout/Logout";
 import Upload from "./features/uploads/Upload";
 import TrendingFeed from "./features/trending/TrendingFeed";
 import FollowingFeed from "./features/following/FollowingFeed";
+import Profile from "./features/profile/Profile";
 import { Route } from "react-router-dom";
 import AuthProvider from "./providers/AuthContext";
 import { AuthRoute, ProtectedRoute } from "./util/routesUtil";
@@ -20,15 +21,6 @@ function App() {
           <NavBar />
           <LandingPage />
         </Route>
-        <ProtectedRoute path="/trending">
-          <TrendingFeed />
-        </ProtectedRoute>
-        <ProtectedRoute path="/following">
-          <FollowingFeed />
-        </ProtectedRoute>
-        <ProtectedRoute path="/upload">
-          <Upload />
-        </ProtectedRoute>
         <AuthRoute path="/signup">
           <SignUp />
         </AuthRoute>
@@ -38,6 +30,18 @@ function App() {
         <AuthRoute path="/logout">
           <Logout />
         </AuthRoute>
+        <ProtectedRoute path="/trending">
+          <TrendingFeed />
+        </ProtectedRoute>
+        <ProtectedRoute path="/following">
+          <FollowingFeed />
+        </ProtectedRoute>
+        <ProtectedRoute path="/upload">
+          <Upload />
+        </ProtectedRoute>
+        <ProtectedRoute path="/profile">
+          <Profile />
+        </ProtectedRoute>
     </AuthProvider>
     </div>
   );

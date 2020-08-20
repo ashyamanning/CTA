@@ -25,6 +25,7 @@ const NavBar = () => {
                     <img src="https://www.pinclipart.com/picdir/middle/145-1450618_2d-artist-tik-tok-logo-png-clipart.png" alt="TikTok logo"/>
                 </NavLink>
                 <NavLink to="/upload">Upload</NavLink>
+                <NavLink to="/profile">Profile</NavLink>
                 <NavLink to="/logout">Logout</NavLink>
             </nav>
             )

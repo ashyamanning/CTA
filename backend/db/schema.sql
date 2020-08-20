@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS my_tik_tok;
-CREATE DATABASE my_tik_tok;
+-- DROP DATABASE IF EXISTS my_tik_tok;
+-- CREATE DATABASE my_tik_tok;
 
-\c my_tik_tok;
+-- \c my_tik_tok;
 
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS posts;

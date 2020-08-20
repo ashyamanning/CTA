@@ -1,0 +1,20 @@
+{
+  "name": "cta",
+  "version": "1.0.0",
+  "description": "tik-tok clone",
+  "main": "backend/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashyamanning/CTA.git"
+  },
+  "author": "Ashya Manning",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashyamanning/CTA/issues"
+  },
+  "homepage": "https://github.com/ashyamanning/CTA#readme"
+}
