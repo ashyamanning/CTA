@@ -1,6 +1,8 @@
 const userLikes = require("express").Router({ mergeParams: true });
-const { getAllUserPostLikes } = require("../../../queries/users/Users");
+const { getAllUserLikes } = require("../../../queries/users/Users");
 
-userLikes.get("/", getAllUserPostLikes);
+
+userLikes.get("/:id/likes",  getAllUserLikes);
+
 
 module.exports = userLikes;

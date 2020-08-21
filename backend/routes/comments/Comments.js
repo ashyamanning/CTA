@@ -1,6 +1,10 @@
-// const comments = require("express").Router();
-// const { getAllComments } = require("../../queries/comments/Comments");
+const comments = require("express").Router();
+const { createComment, editComment, deleteComment } = require("../../queries/comments/Comments");
 
-// comments.get("/", getAllComments);
+comments.post("/", createComment);
 
-// module.exports = comments;
+comments.patch("/:id", editComment);
+
+comments.delete("/:id", deleteComment);
+
+module.exports = comments;

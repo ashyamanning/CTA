@@ -18,7 +18,7 @@ users.use("/", usersLikesRouter);
 
 users.get("/", checkFirebaseToken, getUsers);
 
-users.get("/:username", checkFirebaseToken, getUser);
+users.get("/:id", checkFirebaseToken, getUser);
 
 users.post("/", createUser);
 

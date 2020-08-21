@@ -20,9 +20,13 @@ const getAllPosts = async (req, res, next) => {
 
 const getAllPostLikes = async (req, res, next) => {
   try {
+    // let postLikes = await db.any(
+    //   "SELECT * FROM likes INNER JOIN posts ON posts.id = likes.post_id INNER JOIN users ON users.id = posts.poster_id WHERE poster_id = $1",
+    //   req.params.poster_id
+    // );
     let postLikes = await db.any(
-      "SELECT * FROM likes INNER JOIN posts ON posts.id = likes.post_id INNER JOIN users ON users.id = posts.poster_id WHERE poster_id = $1",
-      req.params.poster_id
+      "SELECT COUNT (*) FROM likes INNER JOIN posts ON posts.id = likes.post_id INNER JOIN users ON users.id = posts.poster_id WHERE poster_id = $1", 
+      req.params.id
     );
     res.status(200).json({
       status: "Success!",
@@ -80,6 +84,27 @@ const createPost = async (req, res, next) => {
   }
 };
 
+const editPost = async (req, res, next) => {
+  try {
+    let editedPost = await db.one(
+      "UPDATE posts SET caption = $1 WHERE post_id = $2 RETURNING *",
+      [req.body, req.params.post_id]
+    );
+    res.status(200).json({
+      status: "Success!",
+      message: "Updated post!",
+      payload: editedPost,
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: err,
+      message: "Unable to edit post!",
+      payload: null,
+    });
+    next(err);
+  }
+};
+
 const deletePost = async (req, res, next) => {
   try {
     await db.none("DELETE FROM posts WHERE id = $1 AND poster_id = $2", [
@@ -121,4 +146,4 @@ const getAllUserPosts = async (req, res, next) => {
   }
 };
 
-module.exports = { getAllPosts, getAllPostLikes, getAllPostComments, createPost, deletePost, getAllUserPosts };
+module.exports = { getAllPosts, getAllPostLikes, getAllPostComments, createPost, editPost, deletePost, getAllUserPosts };
