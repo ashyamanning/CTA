@@ -10,9 +10,6 @@ const { checkFirebaseToken } = require("../../middleware/auth");
 const usersPostsRouter = require("./NestedUsersRoutes/NestedPosts");
 users.use("/", usersPostsRouter);
 
-const usersCommentsRouter = require("./NestedUsersRoutes/NestedComments");
-users.use("/", usersCommentsRouter);
-
 const usersLikesRouter = require("./NestedUsersRoutes/NestedLikes");
 users.use("/", usersLikesRouter);
 

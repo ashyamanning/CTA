@@ -8,7 +8,7 @@ const PORT = process.env.PORT;
 
 const postsRouter = require("./routes/posts/Posts");
 const usersRouter = require("./routes/users/Users");
-// const commentsRouter = require("./routes/comments/Comments");
+const commentsRouter = require("./routes/comments/Comments");
 const likesRouter = require("./routes/likes/Likes");
 const hashtagsRouter = require("./routes/hashtags/Hashtags");
 
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 app.use("/api/posts", postsRouter);
 app.use("/api/users", usersRouter);
-// app.use("/api/comments", commentsRouter);
+app.use("/api/comments", commentsRouter);
 app.use("/api/likes", likesRouter);
 app.use("/api/hashtags", hashtagsRouter);
 

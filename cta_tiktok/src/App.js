@@ -27,9 +27,9 @@ function App() {
         <AuthRoute path="/login">
           <Login />
         </AuthRoute>
-        <AuthRoute path="/logout">
+        <Route path="/logout">
           <Logout />
-        </AuthRoute>
+        </Route>
         <ProtectedRoute path="/trending">
           <TrendingFeed />
         </ProtectedRoute>
