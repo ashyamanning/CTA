@@ -10,7 +10,7 @@ import FollowingFeed from "./features/following/FollowingFeed";
 import Profile from "./features/profile/Profile";
 import { Route } from "react-router-dom";
 import AuthProvider from "./providers/AuthContext";
-import { AuthRoute, ProtectedRoute } from "./util/routesUtil";
+import { ProtectedRoute } from "./util/routesUtil";
 import './App.css';
 
 function App() {
@@ -21,12 +21,12 @@ function App() {
           <NavBar />
           <LandingPage />
         </Route>
-        <AuthRoute path="/signup">
+        <Route path="/signup">
           <SignUp />
-        </AuthRoute>
-        <AuthRoute path="/login">
+        </Route>
+        <Route path="/login">
           <Login />
-        </AuthRoute>
+        </Route>
         <Route path="/logout">
           <Logout />
         </Route>

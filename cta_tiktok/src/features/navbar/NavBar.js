@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { AuthContext } from "../../providers/AuthContext";
+import "../../css/NavBar.css";
 
 const NavBar = () => {
-    // const { currentUser } = useContext(AuthContext);
-    const currentUser = null;
-    const userToken = useSelector((state) => state);
-    console.log(userToken);
+    const { currentUser } = useContext(AuthContext);
+    // const currentUser = null;
 
     const homeNav = () => {
         return (
@@ -18,11 +17,11 @@ const NavBar = () => {
     };
 
     const watchNowNav = () => {
-        if (userToken) {
+        if (currentUser) {
             return (
                 <nav>
                 <NavLink to="/trending">
-                    <img src="https://www.pinclipart.com/picdir/middle/145-1450618_2d-artist-tik-tok-logo-png-clipart.png" alt="TikTok logo"/>
+                    <img src="https://www.pinclipart.com/picdir/middle/145-1450618_2d-artist-tik-tok-logo-png-clipart.png" className="tikTokLogo" alt="TikTok logo"/>
                 </NavLink>
                 <NavLink to="/upload">Upload</NavLink>
                 <NavLink to="/profile">Profile</NavLink>
@@ -33,7 +32,7 @@ const NavBar = () => {
             return (
                 <nav>
                     <NavLink to="/trending">
-                    <img src="https://www.pinclipart.com/picdir/middle/145-1450618_2d-artist-tik-tok-logo-png-clipart.png" alt="TikTok logo"/>
+                    <img src="https://www.pinclipart.com/picdir/middle/145-1450618_2d-artist-tik-tok-logo-png-clipart.png" className="tikTokLogo" alt="TikTok logo"/>
                     </NavLink>
                     <NavLink to="/upload">Upload</NavLink>
                     <NavLink to="/login">Login</NavLink>
@@ -44,7 +43,7 @@ const NavBar = () => {
 
     return (
         <>
-            {userToken ? homeNav() : watchNowNav()}
+            {currentUser ? homeNav() : watchNowNav()}
         </>
     );
 };

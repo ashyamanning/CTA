@@ -19,6 +19,7 @@ const Login = () => {
             dispatch(updateUser(res.user));
             history.push("/trending");
         } catch (err) {
+            console.log(err);
             setError(err.message);
         }
     };
