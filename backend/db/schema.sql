@@ -11,25 +11,29 @@ DROP TABLE IF EXISTS hashtags;
 
 CREATE TABLE users (
     id VARCHAR PRIMARY KEY,
-    firstName TEXT,
-    lastName TEXT,
-    userName TEXT NOT NULL UNIQUE,
-    bio VARCHAR,
-    profile_pic_url VARCHAR
+    firstName VARCHAR,
+    lastName VARCHAR,
+    userName VARCHAR NOT NULL UNIQUE,
+    bio TEXT,
+    profile_pic_url VARCHAR,
+    join_date TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE posts (
     id SERIAL PRIMARY KEY,
     poster_id VARCHAR REFERENCES users(id) ON DELETE CASCADE,
     video_url VARCHAR/* VARBINARY(MAX)*/,
-    caption VARCHAR(250)
+    caption VARCHAR(200),
+    created_at_timestamp TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE comments (
     id SERIAL PRIMARY KEY,
     commentor_id VARCHAR REFERENCES users(id),
     post_id INTEGER REFERENCES posts(id) ON DELETE CASCADE,
-    body VARCHAR(250)
+    body VARCHAR(300),
+    created_at_timestamp TIMESTAMP DEFAULT NOW()
+
 );
 
 CREATE TABLE likes (

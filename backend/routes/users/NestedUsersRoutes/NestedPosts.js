@@ -6,9 +6,9 @@ const {
   editPost,
 } = require("../../../queries/posts/Posts");
 
-userPosts.get("/:id/posts", getAllUserPosts);
+userPosts.get("/posts", getAllUserPosts);
 
-userPosts.post("/:id/posts", createPost);
+userPosts.post("/new", createPost);
 
 userPosts.delete("/:id/posts/:post_id", deletePost);
 

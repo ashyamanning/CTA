@@ -4,9 +4,8 @@ import { apiURL } from "../../util/apiURL";
 import axios from "axios";
 
 
-const Upload = () => {
+const Upload = ({ setVideoURL, video_url }) => {
     const [video, setVideo] = useState(null);
-    const [videoURL, setVideoURL] = useState("");
     const [progress, setProgress] = useState(0);
     
     const bucketName = "videos";
@@ -81,7 +80,7 @@ const Upload = () => {
             </form>
             {!video ? 
                 null : 
-                <video width="450" height="640" controls="on" autoPlay="om" src={video} type={video.type}/>
+                <video width="450" height="640" controls="on" autoPlay="om" src={video_url} type={video.type}/>
                 /* <video width="320" height="740" controls>
                     <source src={videoURL} type={video.type}/>
                 </video> */

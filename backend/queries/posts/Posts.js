@@ -65,6 +65,7 @@ const getAllPostComments = async (req, res, next) => {
 
 const createPost = async (req, res, next) => {
   try {
+    console.log("create post query");
     let newPost = await db.one(
       "INSERT INTO posts (poster_id, video_url, caption) VALUES (${poster_id}, ${video_url}, ${caption})",
       req.body
@@ -75,6 +76,7 @@ const createPost = async (req, res, next) => {
       payload: newPost,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json({
       status: err,
       message: "Failed to create post!",

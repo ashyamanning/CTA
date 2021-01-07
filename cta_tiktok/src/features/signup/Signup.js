@@ -97,10 +97,13 @@ const SignUp = () => {
                     <input type="email" value={email} name="Email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
                     <input type="password" value={password} name="Password" placeholder="Password" autoComplete="on" onChange={(e) => setPassword(e.target.value)}/>
                     <input type="text" value={bio} name="Bio" placeholder="Bio" onChange={(e) => setBio(e.target.value)}/>
-                    <input type="file" value={profilePicUrl} name="profilePicUrl" onChange={handleImageAsFile} required/>
+                    <input type="file" fileName={imageAsFile} name="profilePicUrl" onChange={handleImageAsFile} required/>
                     <button type="button" onClick={() => handleFirebaseUpload()}>Upload</button>
                     {toggleUploadMsg ? 
-                    <h5>Upload successful!</h5> : 
+                    <div>
+                      <h5>Upload successful!</h5>
+                      <img src={profilePicUrl}/> 
+                    </div> :
                     null}
                     <button type="submit" onClick={handleSubmit}>Login</button>
                 </div>

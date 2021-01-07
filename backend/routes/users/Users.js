@@ -8,10 +8,10 @@ const {
 const { checkFirebaseToken } = require("../../middleware/auth");
 
 const usersPostsRouter = require("./NestedUsersRoutes/NestedPosts");
-users.use("/", usersPostsRouter);
+users.use("/:id/posts", usersPostsRouter);
 
 const usersLikesRouter = require("./NestedUsersRoutes/NestedLikes");
-users.use("/", usersLikesRouter);
+users.use("/:id/likes", usersLikesRouter);
 
 users.get("/", checkFirebaseToken, getUsers);
 

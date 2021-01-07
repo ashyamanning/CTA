@@ -12,6 +12,7 @@ import { Route } from "react-router-dom";
 import AuthProvider from "./providers/AuthContext";
 import { ProtectedRoute } from "./util/routesUtil";
 import './App.css';
+import PostUpload from './features/posts/PostUpload';
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
           <FollowingFeed />
         </ProtectedRoute>
         <ProtectedRoute path="/upload">
-          <Upload />
+          <PostUpload/>
         </ProtectedRoute>
         <ProtectedRoute path="/profile">
           <Profile />

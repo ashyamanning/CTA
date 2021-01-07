@@ -11,13 +11,14 @@ const NavBar = () => {
         return (
             <nav>
                 <NavLink exact to="/">Home</NavLink>
-                <NavLink to="/trending">Watch Now</NavLink>
+                <NavLink to="/login">Watch Now</NavLink>
             </nav>
         )
     };
 
     const watchNowNav = () => {
         if (currentUser) {
+            console.log("user", currentUser);
             return (
                 <nav>
                 <NavLink to="/trending">
@@ -34,7 +35,6 @@ const NavBar = () => {
                     <NavLink to="/trending">
                     <img src="https://www.pinclipart.com/picdir/middle/145-1450618_2d-artist-tik-tok-logo-png-clipart.png" className="tikTokLogo" alt="TikTok logo"/>
                     </NavLink>
-                    <NavLink to="/upload">Upload</NavLink>
                     <NavLink to="/login">Login</NavLink>
                 </nav>
             )
@@ -43,7 +43,7 @@ const NavBar = () => {
 
     return (
         <>
-            {currentUser ? homeNav() : watchNowNav()}
+            {currentUser ? watchNowNav() : homeNav()}
         </>
     );
 };
