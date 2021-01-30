@@ -2,10 +2,12 @@ import React, { useState, useContext } from 'react';
 import Upload from '../uploads/Upload';
 import { apiURL } from '../../util/apiURL';
 import { AuthContext } from '../../providers/AuthContext';
+import { useHistory } from "react-router-dom";
 import axios from 'axios';
 
 const PostUpload = () => {
     const API = apiURL();
+    const history = useHistory();
     const { currentUser } = useContext(AuthContext);
     
     const [caption, setCaption] = useState("");
@@ -23,7 +25,9 @@ const PostUpload = () => {
                 video_url,
                 caption
             });
+            // debugger;
             console.log("createdPostFinish", createdPost);
+            history.push("/trending");
         } catch (error) {
             console.log(error);
         }

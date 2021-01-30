@@ -8,11 +8,6 @@ const Upload = ({ setVideoURL, video_url }) => {
     const [video, setVideo] = useState(null);
     const [progress, setProgress] = useState(0);
     
-    const bucketName = "videos";
-    let filePath; 
-    if (video !== null) {
-        filePath = storage.ref(`${bucketName}/${video.name}`).put(video);
-    }
 
     const handleChange = (e) => {
         const video = e.target.files[0];
@@ -24,10 +19,19 @@ const Upload = ({ setVideoURL, video_url }) => {
             setVideo((videoFile) => video);
         }
     };
+
+    let filePath;
+    // const bucketName = "videos";
+    // let filePath = `${bucketName}/${video.name}`; 
+    if (video !== null) {
+        // filePath = storage.ref(`${bucketName}/${video.name}`).put(video);
+        filePath = storage.ref().child(`videos/${video.name}`).put(video);
+    }
     
+
     const handleUpload = () => {
-        if (video === "") {
-            alert('PLease choose a valid file before uploading!')
+        if (video === null) {
+            alert('Please choose a valid file before uploading!')
         } else {
             alert(
                 `Selected file: ${filePath.current.files[0].name}`

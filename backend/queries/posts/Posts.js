@@ -2,7 +2,19 @@ const db = require("../../db/index");
 
 const getAllPosts = async (req, res, next) => {
   try {
-    let posts = await db.any("SELECT * FROM posts", req.body);
+    let posts = await db.any(`
+    SELECT 
+      users.id AS uid,
+      posts.id,
+      caption,
+      video_url,
+      created_at_timestamp,
+      display_name,
+      username 
+    FROM posts 
+    INNER JOIN users 
+    ON users.id = posts.poster_id
+    ORDER BY created_at_timestamp DESC`, req.body);
     res.status(200).json({
       status: "Success!",
       message: "Retrieved all posts!",
@@ -66,9 +78,10 @@ const getAllPostComments = async (req, res, next) => {
 const createPost = async (req, res, next) => {
   try {
     console.log("create post query");
+    let { poster_id, video_url, caption } = req.body;
     let newPost = await db.one(
-      "INSERT INTO posts (poster_id, video_url, caption) VALUES (${poster_id}, ${video_url}, ${caption})",
-      req.body
+      "INSERT INTO posts (poster_id, video_url, caption) VALUES ($1, $2, $3) RETURNING *",
+      [ poster_id, video_url, caption ]
     );
     res.status(200).json({
       status: "Success!",

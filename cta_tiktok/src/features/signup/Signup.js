@@ -70,7 +70,7 @@ const SignUp = () => {
         try {
             let res = await signUp(email, password);
             debugger;
-            let signIn = await axios.post(`${API}/api/users`, {
+            let signIn = await axios.post(`${API}/users`, {
                 id: res.user.uid,
                 firstName,
                 lastName,

@@ -42,7 +42,7 @@ const getUser = async (req, res, next) => {
 const createUser = async (req, res, next) => {
   try {
     let newUser = await db.one(
-      "INSERT INTO users (id, firstName, lastName, userName, bio, profile_pic_url) VALUES (${id}, ${firstName}, ${lastName}, ${userName}, ${bio}, ${profile_pic_url}) RETURNING *",
+      "INSERT INTO users (id, firstname, lastname, display_name, username, bio, profile_pic_url) VALUES (${id}, ${firstname}, ${lastname}, ${display_name}, ${username}, ${bio}, ${profile_pic_url}) RETURNING *",
       req.body
     );
     res.status(200).json({
