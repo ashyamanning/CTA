@@ -31,9 +31,15 @@ const TrendingFeed = () => {
                     return (
                         <div>
                             <h1>{post.display_name}</h1>
-                            <div>{new Date(post.created_at_timestamp).toLocaleString()}</div>
-                            <div>@{post.username}</div>
-                            <div>{post.video_url}</div>
+                            <h3>@{post.username}</h3>
+                            <div>{new Date(post.created_at_timestamp).toLocaleDateString()}</div>
+                            <video controls width="420" height="840">
+                                <source src={post.video_url} type="video/mp4"/>
+                                <source src={post.video_url} type="video/mov"/>
+                                <source src={post.video_url} type="video/ogg"/>
+                                <source src={post.video_url} type="video/quicktime"/>
+                                Your browser does not support the HTML video.
+                            </video>
                             <div>{post.caption}</div>
                         </div>
                     )
