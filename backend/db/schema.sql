@@ -61,16 +61,16 @@ VALUES
 
 INSERT INTO posts (poster_id, video_url, caption, created_at_timestamp)
 VALUES
-    ('1', 'https://www.joe.ie/life-style/9-of-the-best-60-seconds-or-less-youtube-videos-551969', 'HAHA', '2021-01-24 17:50:04.349904'),
+    ('1', 'https://firebasestorage.googleapis.com/v0/b/my-tik-tok-bf4bd.appspot.com/o/videos%2FbloopertestF.MP4?alt=media&token=b1049110-a3fc-4440-a964-dfb2428e4349', 'HAHA', '2021-01-24 17:50:04.349904'),
     ('2', 'https://firebasestorage.googleapis.com/v0/b/my-tik-tok-bf4bd.appspot.com/o/videos%2Fblooptester4.mov?alt=media&token=ba7f8bce-4e39-446b-a9af-1d64d8310a13', 'This is weird', '2021-01-23 17:50:04.349904'),
     ('3', 'https://firebasestorage.googleapis.com/v0/b/my-tik-tok-bf4bd.appspot.com/o/videos%2Fblooptester3.MOV.mp4?alt=media&token=83966e7a-4e5b-4019-a9ca-7abecba12972', 'Ummmm...', '2021-01-24 12:50:04.349904'),
     ('4', 'https://firebasestorage.googleapis.com/v0/b/my-tik-tok-bf4bd.appspot.com/o/videos%2Fblooptester2.MOV?alt=media&token=5f47aef3-fbe0-4695-ace6-71033542a21b', 'Whaaaaat?!', '2021-01-22 17:50:04.349904'),
     ('5', 'https://firebasestorage.googleapis.com/v0/b/my-tik-tok-bf4bd.appspot.com/o/videos%2Fblooptester.MOV?alt=media&token=b9e3a197-b8cf-454c-835f-f27360b67e77', 'What just happened?', '2021-01-24 12:00:00.349904'),
-    ('6', 'https://www.youtube.com/watch?v=Y8KiYqg077w', 'That was cool', '2021-01-23 09:55:00.349904'),
-    ('XFii3S3xEBcv8rFJ9omsWT7Adh93', 'https://www.youtube.com/watch?v=eQqebq_gfzM', 'Awwww', '2021-01-23 11:35:00.349904'),
-    ('4', 'https://www.pinterest.com/pin/309692911869563856/', 'Take it or leave it.', '2021-01-25 08:40:04.349904'),
-    ('6', 'https://www.youtube.com/watch?v=sjG_XLaOXf4', 'I does this!!', '2021-01-25 09:10:04.349904'),
-    ('5', 'https://www.youtube.com/watch?v=kY3qxdTBXOU', 'Try it!', '2021-01-25 10:50:04.349904'),
-    ('XFii3S3xEBcv8rFJ9omsWT7Adh93', 'https://www.youtube.com/watch?v=p2vEoNuRvrA', 'Really?!', '2021-01-25 11:50:04.349904')
+    ('6', 'https://firebasestorage.googleapis.com/v0/b/my-tik-tok-bf4bd.appspot.com/o/videos%2FbloopertestD.MP4?alt=media&token=e035c617-c98d-4c7a-aa39-6b22eceed294', 'That was cool', '2021-01-23 09:55:00.349904'),
+    ('XFii3S3xEBcv8rFJ9omsWT7Adh93', 'https://firebasestorage.googleapis.com/v0/b/my-tik-tok-bf4bd.appspot.com/o/videos%2FbloopertestC.MP4?alt=media&token=78edc95a-632a-4edd-b741-29a36f54e9dd', 'Awwww', '2021-01-23 11:35:00.349904'),
+    ('4', 'https://firebasestorage.googleapis.com/v0/b/my-tik-tok-bf4bd.appspot.com/o/videos%2FbloopertestB.mp4?alt=media&token=44632126-8b9b-44f7-8799-f96deaaf13e6', 'Take it or leave it.', '2021-01-25 08:40:04.349904'),
+    ('6', 'https://firebasestorage.googleapis.com/v0/b/my-tik-tok-bf4bd.appspot.com/o/videos%2FbloopertestA.mp4?alt=media&token=706f7581-e377-4ebe-b4d3-dade4e0205ba', 'I does this!!', '2021-01-25 09:10:04.349904'),
+    ('5', 'https://firebasestorage.googleapis.com/v0/b/my-tik-tok-bf4bd.appspot.com/o/videos%2F2520429f744a834d4ad7c28361786445.MOV?alt=media&token=04962abe-8b02-4099-b0af-acf53fab8e86', 'Try it!', '2021-01-25 10:50:04.349904'),
+    ('XFii3S3xEBcv8rFJ9omsWT7Adh93', 'https://firebasestorage.googleapis.com/v0/b/my-tik-tok-bf4bd.appspot.com/o/videos%2Fbigbuckbunny.mp4?alt=media&token=961101dd-8877-4c1d-81c3-1ffc04b83e0f', 'Really?!', '2021-01-25 11:50:04.349904')
     ;
     
